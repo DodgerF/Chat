@@ -4,34 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e8a3729-342f-4f94-82b9-ca53356a806c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/client/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/ChatController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/LogInController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/CloseDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/LogInDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/NameDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/NameListDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/database/UsersDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/parameters/HostParameters.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sample/chat/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/server/MonoThreadClientHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/server/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/ChatView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sample/chat/chat.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sample/chat/logIn.fxml" afterDir="false" />
+    <list default="true" id="7e8a3729-342f-4f94-82b9-ca53356a806c" name="Changes" comment="UsersDB and Server">
+      <change afterPath="$PROJECT_DIR$/src/main/java/data/AddUserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data/ChatDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data/ChatIDDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data/ChatListDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data/CreateChatDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data/GetChatListDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data/GetNameListDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data/MessageDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data/RefreshChatDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/ChatMembersDatabase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/ChatsDatabase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ChatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LogInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/LogInDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/LogInDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/NameDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/NameDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/NameListDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/NameListDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/database/UsersDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/UsersDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/chat/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/chat/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/MonoThreadClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/MonoThreadClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/ChatView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ChatView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sample/chat/chat.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample/chat/chat.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,6 +113,14 @@
       <option name="presentableId" value="Default" />
       <updated>1685584650531</updated>
     </task>
+    <task id="LOCAL-00001" summary="UsersDB and Server">
+      <created>1685856527436</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1685856527436</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -122,10 +128,26 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="UsersDB and Server" />
+    <option name="LAST_COMMIT_MESSAGE" value="UsersDB and Server" />
   </component>
 </project>

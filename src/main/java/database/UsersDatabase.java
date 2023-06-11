@@ -4,41 +4,7 @@ import parameters.HostParameters;
 import java.sql.*;
 
 
-public class UsersDatabase {
-    private static Connection connection;
-    private static PreparedStatement statement;
-
-
-
-    public static boolean connection() {
-        try {
-            Class.forName("org.postgresql.Driver");
-            connection = DriverManager.getConnection("jdbc:postgresql://" + HostParameters.getIp() + ":" + HostParameters.getPortDB()
-                    + "/postgres", HostParameters.getLoginDB(), HostParameters.getPasswordDB());
-            System.out.println("Connection to users db successful");
-            createTable();
-            return true;
-        } catch (Exception exception) {
-            System.out.println(exception.getMessage());
-            return false;
-        }
-    }
-
-    public static void createTable() {
-        try {
-
-            statement = connection.prepareStatement("CREATE TABLE IF NOT EXISTS public.users\n" +
-                    "(\n" +
-                    "    username TEXT CHECK (username ~ '^[a-zA-Z]{2,10}$|^([A-Z][a-z]){2,10}$'),\n" +
-                    "    password VARCHAR(20) NOT NULL,\n" +
-                    "    PRIMARY KEY (username)\n" +
-                    ");"
-            );
-            statement.execute();
-        } catch (Exception exception) {
-            System.out.println(exception.getMessage());
-        }
-    }
+public class UsersDatabase extends Database {
 
     public static void clearTable() {
         try {
@@ -98,16 +64,6 @@ public class UsersDatabase {
         }
     }
 
-    public static void closeDB() {
-        try {
-            statement.close();
-            connection.close();
-
-            System.out.println("Users db closed");
-        } catch (Exception exception) {
-            System.out.println(exception.getMessage());
-        }
-    }
 
 
 }

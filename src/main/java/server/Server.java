@@ -1,6 +1,8 @@
 package server;
 
-import database.UsersDatabase;
+import database.Database;
+import parameters.HostParameters;
+
 
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -14,8 +16,8 @@ public class Server {
     public static List<String> namesList = new ArrayList<>();
     public static void main(String[] args) {
         try {
-            ServerSocket server = new ServerSocket(5431);
-            UsersDatabase.connection();
+            ServerSocket server = new ServerSocket(HostParameters.getPortServer());
+            Database.connection();
             while (true) {
                 Socket client = server.accept();
                 try {

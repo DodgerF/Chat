@@ -5,22 +5,31 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ChatController">
    <children>
-      <ListView fx:id="listViewUsers" layoutX="14.0" layoutY="60.0" prefHeight="256.0" prefWidth="192.0" />
-      <HBox layoutX="313.0" layoutY="14.0" prefHeight="38.0" prefWidth="200.0" />
+      <ListView fx:id="listView" layoutX="14.0" layoutY="60.0" prefHeight="256.0" prefWidth="192.0" />
       <HBox layoutX="46.0" layoutY="13.0" prefHeight="40.0" prefWidth="130.0">
          <children>
-            <Button fx:id="buttonOnline" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" text="Online" />
-            <Button fx:id="buttonChats" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" text="Chats" translateX="10.0" />
+            <Button fx:id="buttonOnline" mnemonicParsing="false" onAction="#openUsers" prefHeight="40.0" prefWidth="60.0" text="Online" />
+            <Button fx:id="buttonChats" mnemonicParsing="false" onAction="#openChats" prefHeight="40.0" prefWidth="60.0" text="Chats" translateX="10.0" />
          </children>
       </HBox>
-      <TextArea fx:id="writeArea" disable="true" layoutX="232.0" layoutY="339.0" prefHeight="38.0" prefWidth="329.0" />
-      <TextArea fx:id="chatArea" disable="true" layoutX="232.0" layoutY="60.0" prefHeight="256.0" prefWidth="329.0" />
-      <Button fx:id="buttonPrivateChat" layoutX="45.0" layoutY="327.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" text="Create private chat" />
-      <Button fx:id="buttonGroupChat" layoutX="45.0" layoutY="365.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" text="Create group chat" />
-      <Button fx:id="buttonAddUser" disable="true" layoutX="45.0" layoutY="327.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" text="Add user" visible="false" />
-      <Button fx:id="buttonDeleteChat" disable="true" layoutX="45.0" layoutY="365.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" text="buttonDeleteChat" visible="false" />
+      <TextArea fx:id="writeArea" disable="true" layoutX="232.0" layoutY="339.0" prefHeight="38.0" prefWidth="300.0" />
+      <TextArea fx:id="chatArea" disable="true" layoutX="232.0" layoutY="60.0" prefHeight="256.0" prefWidth="355.0" />
+      <Button fx:id="buttonPrivateChat" layoutX="45.0" layoutY="327.0" mnemonicParsing="false" onAction="#createPrivateChat" prefHeight="25.0" prefWidth="130.0" text="Create private chat" />
+      <Button fx:id="buttonGroupChat" layoutX="45.0" layoutY="365.0" mnemonicParsing="false" onAction="#createGroupChat" prefHeight="25.0" prefWidth="130.0" text="Create group chat" />
+      <Button fx:id="buttonAddUser" disable="true" layoutX="46.0" layoutY="327.0" mnemonicParsing="false" onAction="#selectUser" prefHeight="25.0" prefWidth="130.0" text="Add user" visible="false" />
+      <Button fx:id="buttonSend" disable="true" layoutX="534.0" layoutY="339.0" mnemonicParsing="false" onAction="#send" prefHeight="38.0" prefWidth="53.0" text="Send" />
+      <Button fx:id="buttonOpen" disable="true" layoutX="46.0" layoutY="365.0" mnemonicParsing="false" onAction="#openChat" prefHeight="25.0" prefWidth="130.0" text="Open" visible="false" />
+      <Text fx:id="chatInfo" layoutX="232.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="355.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Button fx:id="buttonAdd" onAction="#addUser" disable="true" layoutX="45.0" layoutY="327.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" text="Add" visible="false" />
+      <Button fx:id="buttonCancel" onAction="#cancelSelect" disable="true" layoutX="45.0" layoutY="365.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" text="Cancel" visible="false" />
    </children>
 </AnchorPane>

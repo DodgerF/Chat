@@ -1,13 +1,17 @@
 package controller;
 
 import client.Client;
-import database.UsersDatabase;
+import data.NameDTO;
+import database.Database;
+
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
+
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Scene;
+
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -27,30 +31,36 @@ public class LogInController implements Initializable{
     Button buttonCancel;
     @FXML
     Button buttonLogIn;
-    private Client client;
 
-    public void setClient(Client client){
-        this.client = client;
-    }
     @FXML
-    private void logIn(ActionEvent actionEvent){
-        client.connect();
-        client.LogIn(usernameField.getText(), passwordField.getText());
+    private void logIn(){
+        Main.getClient().LogIn(usernameField.getText(), passwordField.getText());
     }
 
     @FXML
     private void cancel(ActionEvent actionEvent){
-        ((Node) actionEvent.getSource()).getScene().getWindow().hide();
+        exit();
+    }
+
+    private void addDispatcherListener(){
+        Main.getClient().dispatcherProperty().addListener(new InvalidationListener() {
+            @Override
+            public void invalidated(Observable observable) {
+                if (Main.getClient().getDispatcher() instanceof NameDTO){
+                    ((Stage) buttonLogIn.getScene().getWindow()).close();
+                    Main.createChatWindow();
+                }
+            }
+        });
     }
 
     @FXML
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        addDispatcherListener();
     }
 
     @FXML
     public void exit(){
-        UsersDatabase.closeDB();
         System.exit(0);
     }
 

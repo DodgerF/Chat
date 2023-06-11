@@ -13,8 +13,5 @@ public class NameListDTO implements Serializable {
     public List<String> getUsernamesList(){
         return usernamesList;
     }
-    public void setUsernamesList(List<String> usernamesList){
-        this.usernamesList.clear();
-        this.usernamesList.addAll(usernamesList);
-    }
+
 }
