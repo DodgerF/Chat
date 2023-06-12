@@ -11,6 +11,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.text.Text;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class ChatView {
@@ -57,10 +58,15 @@ public class ChatView {
         this.chatInfo = chatInfo;
         this.buttonAdd = buttonAdd;
         this.buttonCancel = buttonCancel;
+        setChatPreferences();
     }
     public void setActive(Button button, boolean bool){
         button.setDisable(!bool);
         button.setVisible(bool);
+    }
+    private void setChatPreferences(){
+        chatArea.setEditable(false);
+        chatArea.setWrapText(true);
     }
     public void setListView(ObservableList<String> list){
         listView.setItems(list);
@@ -94,6 +100,13 @@ public class ChatView {
         setActive(buttonOnline, !bool);
         setActive(buttonAdd, bool);
         setActive(buttonCancel, bool);
+    }
+    public void setChatInfo(boolean isPrivate, List<String> usernames){
+        String str = "Chat is" + (isPrivate ? " private. ":"n't private. ")
+                + String.join(", ", usernames);
+        if (str.length() > 90)
+            str = str.substring(87) + "...";
+        chatInfo.setText(str);
     }
     public void initialize() {
         list = FXCollections.observableArrayList();

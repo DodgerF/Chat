@@ -46,14 +46,11 @@ public class ChatsDatabase extends Database {
             resultSet.next();
             String currentText = resultSet.getString("text");
             String newText;
-            if (text.length() > 45){
-                text = splitLongString(text, 45);
-            }
             if (currentText != null) {
                 newText = currentText + text;
             }
             else newText = text;
-            if (newText.length() > 7999){
+            if (newText.length() > 8000){
                 newText = newText.substring(newText.length()/2);
             }
             statement = connection.prepareStatement("UPDATE chats SET text = ? WHERE chatID = ?");
@@ -68,18 +65,6 @@ public class ChatsDatabase extends Database {
             System.out.println(exception.getMessage());
         }
     }
-    private static String splitLongString(String longString, int maxLength) {
-       String firstPart = longString.substring(0, maxLength);
-       String secondPart = longString.substring(maxLength);
-       String finalString = "";
-       finalString = finalString + firstPart + "\n";
-       while (secondPart.length() > maxLength){
-           firstPart = secondPart.substring(0, secondPart.length()/2);
-           secondPart = secondPart.substring(secondPart.length()/2);
-           finalString = finalString + firstPart + "\n";
-       }
-        finalString = finalString + secondPart;
-       return finalString;
-    }
+
 
 }

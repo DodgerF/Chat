@@ -132,19 +132,13 @@ public class ChatController implements Initializable {
                     chatList.setAll(((ChatListDTO) message).getChatList().stream().map(String::valueOf).toList());
                 }
                 if (message instanceof ChatDTO chat){
-                    chatInfo.setText(
-                            "Chat is" + (chat.isPrivate() ? " private. ":"n't private. ")
-                                    + String.join(", ", chat.getUsernames())
-                    );
+                    chatView.setChatInfo(chat.isPrivate(), chat.getUsernames());
                     chatArea.setText(chat.getText());
                     chatView.setWriteArea(true);
                 }
                 if (message instanceof RefreshChatDTO chat){
                     if (currentChat.equals(chat.getID())){
-                        chatInfo.setText(
-                                "Chat is" + (chat.isPrivate() ? " private. ":"n't private. ")
-                                        + String.join(", ", chat.getUsernames())
-                        );
+                        chatView.setChatInfo(chat.isPrivate(), chat.getUsernames());
                         chatArea.setText(chat.getText());
                         System.out.println(chat.getText());
                     }
